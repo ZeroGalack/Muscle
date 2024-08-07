@@ -1,0 +1,30 @@
+/* src/components/TopBar.css */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #00000045; /* Cor com opacidade */
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  z-index: 1000; /* Garante que a barra esteja acima de outros conteúdos */
+  display: flex; /* Usado para alinhar o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  justify-content: flex-end
+}
+
+.logo {
+  height: 40px; /* Ajuste conforme necessário */
+  margin-right: 20px; /* Espaço entre a imagem e o texto */
+  margin-left: 20px;
+}
+
+.top-bar p {
+  margin: 0; /* Remove a margem padrão do parágrafo */
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
