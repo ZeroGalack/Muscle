@@ -54,17 +54,15 @@
   } */
 
 
-  .background-image {
-    /* width: 80vw; */
+  /* .background-image {
     height: 80vh; 
     height: 500px;
     background-image: url('../../assets/img/capa-removebg.png');
     background-size: cover;
     background-position: center;
 
-    /* background-color: rgba(0, 0, 0, 0.5); */
     background-blend-mode: overlay;
-  }
+  } */
 
 
 .text-home {
@@ -110,6 +108,7 @@
 .btn_Home {
   position: relative;
   padding: 10px 20px;
+  
   /* background-color: #7e58ce; */
   background-color: #0a14a6;
   /* border: none; */
@@ -236,7 +235,7 @@
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 300%;
+  /* font-size: 300%; */
 }
 
 .full-screen-div::before {

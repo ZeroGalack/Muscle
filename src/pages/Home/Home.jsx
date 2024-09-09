@@ -29,31 +29,30 @@ const Home = () => {
   }, [index]);
 
   const goToAboutPage = () => {
-    navigate('/demo');
+    navigate('/HillsModel');
   };
 
     return (
       <div className="full-screen-div">
           <TopBar/>
-          <div>
-            <div className='header-home-grid'>
-              
-              <div>
-                <h1>ⓂⓊⓈⒸⓁⒺ</h1>
-              </div>
-              <div style={{display: 'flex', justifyContent: 'center'}}>
-                <p style={{fontSize: '16px'}} className='highlight_text-azulClaro-home'>{text}</p>
-              </div>
-              <div style={{display: 'flex', justifyContent: 'center'}}>
 
-                <div onClick={goToAboutPage} className='button-home'>
-                  <RxArrowRight />
-                </div>
-
+          <div style={{display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center'}}>
+        
+              <div style={{display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'center', margin:'0px'}}>
+                <h1 style={{fontSize: '350%'}}>ⓂⓊⓈⒸⓁⒺ</h1>
               </div>
-  
-            </div> 
+
+              <div style={{display: 'flex', justifyContent: 'center', marginRight: '5px', marginLeft: '5p'}}>
+                <p className='highlight_text-azulClaro-home'>{text}</p>
+              </div>
+
+              <div style={{marginTop:'3vh'}} onClick={goToAboutPage} className='button-home'>
+                <RxArrowRight />
+              </div>
+
           </div>
+  
+    
       </div>
     );
   };
