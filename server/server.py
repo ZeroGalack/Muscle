@@ -164,7 +164,7 @@ def Forca_velocidade():
             
             
             if old_x != new_x or old_v != new_v:
-                #print("x: ", x)
+                print("x: ", x)
                 df = modelo.Forca_velocidade(x, vel)        
                 df_json = df.to_json(orient='split')
                 

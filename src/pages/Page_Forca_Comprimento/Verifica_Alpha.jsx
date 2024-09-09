@@ -18,7 +18,7 @@ const VerificaAlpha = () => {
             setMensagemCor('red');  // Define cor vermelha para mensagem de erro
         } else if (dentroMargemA) {
             setMensagem('Respostas corretas ou aproximadas: α = 1449.027');
-            setMensagemCor('green');  // Define cor verde para resposta correta
+            setMensagemCor('#00ec36');  // Define cor verde para resposta correta
         } else {
             setMensagem('Respostas incorretas. Tente novamente.');
             setMensagemCor('red');  // Define cor vermelha para resposta incorreta
@@ -74,7 +74,7 @@ const VerificaAlpha = () => {
                   placeholder="Digite o valor de α !"
                 />
               </div>
-              <div style={{ display: 'flex', marginTop: '10px' }}>
+              <div style={{display: 'flex', marginTop: '10px', alignItems: 'center'}}>
                 <div>
                   <button type="submit">Enviar</button>
                 </div>

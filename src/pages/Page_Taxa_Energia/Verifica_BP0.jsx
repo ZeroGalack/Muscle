@@ -11,7 +11,7 @@ function Verifica_BP0() {
     event.preventDefault();
 
     // Valores esperados para 'a'
-    const valorEsperadoB = 0.335;
+    const valorEsperadoB = -0.335;
     const valorEsperadoP0 = 144.90;
 
     // Margem de erro
@@ -29,8 +29,8 @@ function Verifica_BP0() {
       setMensagem('Por favor, insira valores numéricos válidos!');
       setMensagemCor('red');  // Define cor vermelha para mensagem de erro
     } else if (dentroMargemA && dentroMargemP0) {
-      setMensagem('Resposta corretas ou aproximadas: b = 0.335 e P0 = 144.90');
-      setMensagemCor('green');  // Define cor verde para resposta correta
+      setMensagem('Resposta corretas ou aproximadas: 𝑏 = 0.335 e 𝑃0 = 144.90');
+      setMensagemCor('#00ec36');  // Define cor verde para resposta correta
     } else {
       setMensagem('Resposta incorreta. Tente novamente.');
       setMensagemCor('red');  // Define cor vermelha para resposta incorreta
@@ -65,7 +65,7 @@ function Verifica_BP0() {
               placeholder="Digite o valor de 𝑃0!"
             />
           </div>
-          <div style={{display: 'flex', marginTop: '10px'}}>
+          <div style={{display: 'flex', marginTop: '10px', alignItems: 'center'}}>
             <div>
               <button type="submit">Enviar</button>
             </div>

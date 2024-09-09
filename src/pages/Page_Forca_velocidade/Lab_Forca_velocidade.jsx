@@ -108,9 +108,9 @@ const Lab_Forca_velocidade = () => {
                         style={{width: '40%'}}
                         type='range' 
                         id='' 
-                        min='0.5' 
-                        max='5' 
-                        step='0.5' 
+                        min='0.4' 
+                        max='4' 
+                        step='0.4' 
                         value={inputV}
                         onChange={(e) => setInputV(parseFloat(e.target.value))} // Define a função para atualizar o estado
                     />

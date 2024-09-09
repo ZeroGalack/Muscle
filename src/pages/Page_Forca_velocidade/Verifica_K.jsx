@@ -8,8 +8,7 @@ function Verifica_K() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Valores esperados para 'a'
-    const valorEsperadoK = 47.14;
+    const valorEsperadoK = 61.017879999609;
 
     // Margem de erro
     const margemErro = 0.5;
@@ -24,8 +23,8 @@ function Verifica_K() {
       setMensagem('Por favor, insira valores numéricos válidos!');
       setMensagemCor('red');  // Define cor vermelha para mensagem de erro
     } else if (dentroMargemK) {
-      setMensagem('Resposta correta ou aproximada: a = 37.24');
-      setMensagemCor('green');  // Define cor verde para resposta correta
+      setMensagem('Resposta correta ou aproximada: 𝑘 = 61.017879999609');
+      setMensagemCor('#00ec36');  // Define cor verde para resposta correta
     } else {
       setMensagem('Resposta incorreta. Tente novamente.');
       setMensagemCor('red');  // Define cor vermelha para resposta incorreta
@@ -50,7 +49,7 @@ function Verifica_K() {
               placeholder="Digite o valor de 𝑘!"
             />
           </div>
-          <div style={{display: 'flex', marginTop: '10px'}}>
+          <div style={{display: 'flex', marginTop: '10px', alignItems: 'center'}}>
             <div>
               <button type="submit">Enviar</button>
             </div>

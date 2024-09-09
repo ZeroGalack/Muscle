@@ -86,30 +86,68 @@ class Hill_Model:
             taxa_Energia.append( (P[-1] + self.a) * vel )
 
         return taxa_Energia, forcas
+    
+    
+    def contracao_completa_isometrica(self, encurtamento):
+        L = np.linspace(1, 1 - encurtamento, self.steps)
 
+        return L
+    
+    def get_energia2(self, contracao, segs):
 
-    def get_Forca_vel(self, seg):
-
-        velocidades = []
+        taxa_Energia = []
         forcas = []
+    
+        segs_contracao = np.linspace(0.3836, segs, 10)
         
-        segs_contracao = np.linspace(seg, 100, self.steps)
+        print("AHAA: ", contracao)
         
-        for s in segs_contracao:
-            L, vel = self.calcular_contracao(0.5, s, s)
-            t = np.linspace(0, s, self.steps)
+        for i in segs_contracao:
+            L = self.contracao_completa_isometrica(contracao)
+            t = np.linspace(0, i, self.steps)
+            
+            vel = contracao/i
             
             if len(L) != len(t):
                 t = np.delete(t, -1)
                 
+            print(vel)
+            
             P, H, Lse, Lce = self.run_Hill(L, t)
             
-            print('vel: ', vel)
-  
+            taxa_Energia.append( (P[-1] + self.a) * vel )
+            
+            forcas.append( P[-1] )
+
+
+        return taxa_Energia, forcas
+
+
+    def get_Forca_vel(self, contracao, seg):
+
+        velocidades = []
+        forcas = []
+        
+        segs_contracao = np.linspace(10, seg, 50)        
+        
+        for i in segs_contracao:
+            L = self.contracao_completa_isometrica(contracao)
+            t = np.linspace(0, i, self.steps)
+            
+            vel = contracao/i
+            
+            if len(L) != len(t):
+                t = np.delete(t, -1)
+                
+            print('vel: ', vel)   
+            
+            P, H, Lse, Lce = self.run_Hill(L, t)
+
             velocidades.append(vel)
             forcas.append(P[-1])
 
         return velocidades, forcas
+
 
     def Lab_forca_comprimento(self, encurtamento, segs_contracao):
         L, vel_contraca = self.calcular_contracao(encurtamento, segs_contracao, segs_exp=5)
@@ -233,11 +271,11 @@ class Hill_Model:
     
     def taxa_Energia(self, encurtamento, segs_contracao):
 
-        if encurtamento == 0:
-            segs_contracao = 100 
+        # if encurtamento == 0:
+        #     segs_contracao = 100 
 
 
-        taxa_Energia, forcas = self.get_energia(segs_contracao)
+        taxa_Energia, forcas = self.get_energia2(encurtamento, segs_contracao)
         
         
         current_directory = os.getcwd()
@@ -273,11 +311,11 @@ class Hill_Model:
     
     def Forca_velocidade(self, encurtamento, segs_contracao):
         
-        if encurtamento == 0:
-            segs_contracao = 100
+        # if encurtamento == 0:
+        #     segs_contracao = 100
 
-
-        velocidades, forcas = self.get_Forca_vel(segs_contracao)
+        print()
+        velocidades, forcas = self.get_Forca_vel(encurtamento, segs_contracao)
         
         
         current_directory = os.getcwd()
@@ -297,7 +335,7 @@ class Hill_Model:
         ax1.set_title('forcas vs velocidades')
         ax1.grid(True)
 
-        ax1.set_xlim([0, 1])
+        ax1.set_xlim([0, 1.5])
         ax1.set_ylim([0, 150])
 
         plt.savefig(os.path.join(save_path, 'Forca_velocidade.png'))

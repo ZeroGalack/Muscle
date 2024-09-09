@@ -40,7 +40,7 @@ const Lab_Taxa_Energia = () => {
   
       const df = JSON.parse(data.df);
       let formattedData = '';
-      formattedData += `P          dE\n`;
+      formattedData += `P           dE\n`;
   
       df.data.forEach((row, index) => {
         formattedData += `${row[0].toFixed(6)}   ${row[1].toFixed(6)} \n`;
@@ -109,7 +109,7 @@ const Lab_Taxa_Energia = () => {
                         type='range' 
                         id='' 
                         min='0.5' 
-                        max='5' 
+                        max='10' 
                         step='0.5' 
                         value={inputV}
                         onChange={(e) => setInputV(parseFloat(e.target.value))} // Define a função para atualizar o estado

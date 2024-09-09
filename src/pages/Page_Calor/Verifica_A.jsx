@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import InfoIcon from '../../components/Info';
+
+import coeficiente_angular from '../../assets/img/coeficiente_angular.png'
 
 function Verifica_A() {
   const [valorA, setValorA] = useState('');
   const [mensagem, setMensagem] = useState('');
   const [mensagemCor, setMensagemCor] = useState('');
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -25,7 +29,7 @@ function Verifica_A() {
       setMensagemCor('red');  // Define cor vermelha para mensagem de erro
     } else if (dentroMargemA) {
       setMensagem('Resposta correta ou aproximada: a = 37.24');
-      setMensagemCor('green');  // Define cor verde para resposta correta
+      setMensagemCor('#00ec36');  // Define cor verde para resposta correta
     } else {
       setMensagem('Resposta incorreta. Tente novamente.');
       setMensagemCor('red');  // Define cor vermelha para resposta incorreta
@@ -35,12 +39,13 @@ function Verifica_A() {
   return (
     <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%'}}>
       <div>
-        <form onSubmit={handleSubmit}>
+        <form style={{display: 'flex', flexDirection: 'column'}} onSubmit={handleSubmit}>
           <h2>Responda:</h2>
           <p style={{textIndent: '2em'}} htmlFor="campoA">
             Utilizando a fórmula do "Calor de Encurtamento", volte ao laboratório e, com os dados numéricos fornecidos, determine o valor da constante 𝑎. Essa constante representa a relação entre o encurtamento muscular e o calor liberado durante a contração.
           </p>
-          <div style={{ display: 'flex', width: '100%' }}>
+
+          <div style={{display: 'flex'}}> 
             <input
               style={{ width: '60%' }}
               type="text"
@@ -49,8 +54,18 @@ function Verifica_A() {
               onChange={(e) => setValorA(e.target.value)}
               placeholder="Digite o valor de a!"
             />
+
+          <InfoIcon style={{right: '22%', top: '33%'}}>
+          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <p style={{margin: '0px'}}>Coeficente angular m: </p>
+            <div className="img-fundoBranco" style={{alignItems: 'center', width: '100%', margin: '3%'}}>
+              <img src={coeficiente_angular} alt="coeficiente_angular" style={{ maxWidth: '50%', maxHeight: '100%' }} />
+            </div>
           </div>
-          <div style={{display: 'flex', marginTop: '10px'}}>
+          </InfoIcon>
+
+          </div>
+          <div style={{display: 'flex', marginTop: '10px', alignItems: 'center'}}>
             <div>
               <button type="submit">Enviar</button>
             </div>
