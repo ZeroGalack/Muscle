@@ -17,6 +17,12 @@ const Page_Taxa_Energia = () => {
 
     const [content, setContent] = useState(0);
 
+    const [resultado, setResultado] = useState(null);
+
+    const handleResultado = (resultado) => {
+      setResultado(resultado);
+    };
+
     const limDir = 5;
     const limEsq = 0;
 
@@ -242,7 +248,7 @@ const Page_Taxa_Energia = () => {
                           </div>
                       </div>
 
-                      <Verifica_BP0 />
+                      <Verifica_BP0 onResultado={handleResultado} />
                     </div>
 
 
@@ -278,11 +284,22 @@ const Page_Taxa_Energia = () => {
 
    
           { content === limDir ? (
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <button onClick={goToAboutPage} className='button-demo'>
-                <FontAwesomeIcon icon={faChevronRight} />
-              </button>
+
+            <div>
+              {resultado ? (
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <button onClick={goToAboutPage} className='button-demo'>
+                    <FontAwesomeIcon icon={faChevronRight} />
+                  </button>
+                </div>
+              ) : 
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <button className='button-demo'>
+                    {/* <FontAwesomeIcon icon={faChevronRight} /> */}
+                  </button>
+                </div>}
             </div>
+            
           ): (
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <button onClick={ButtonClickBD} className='button-demo'>

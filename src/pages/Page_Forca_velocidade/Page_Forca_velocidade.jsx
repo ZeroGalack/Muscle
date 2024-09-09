@@ -19,8 +19,14 @@ const Page_Forca_velocidade = () => {
 
     const [content, setContent] = useState(0);
 
+    const [resultado, setResultado] = useState(null);
+
     const limDir = 5;
     const limEsq = 0;
+
+    const handleResultado = (resultado) => {
+      setResultado(resultado);
+    };
 
     const ButtonClickBE = () => {
         setContent((prevContent) => {
@@ -202,7 +208,7 @@ const Page_Forca_velocidade = () => {
                 </div>
 
               <div style={{marginLeft: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                <Verifica_K />
+                <Verifica_K  onResultado={handleResultado} />
               </div>
 
               </div>
@@ -235,19 +241,30 @@ const Page_Forca_velocidade = () => {
 
    
           { content === limDir ? (
+
+          <div>
+            {resultado ? (
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <button onClick={goToAboutPage} className='button-demo'>
+                  <FontAwesomeIcon icon={faChevronRight} />
+                </button>
+              </div>
+            ) : 
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <button onClick={goToAboutPage} className='button-demo'>
-                <FontAwesomeIcon icon={faChevronRight} />
-              </button>
-            </div>
+                <button className='button-demo'>
+                  {/* <FontAwesomeIcon icon={faChevronRight} /> */}
+                </button>
+              </div>}
+          </div>
+
           ): (
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <button onClick={ButtonClickBD} className='button-demo'>
-                <FontAwesomeIcon icon={faChevronRight} />
-              </button>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <button onClick={ButtonClickBD} className='button-demo'>
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button>
           </div>
           )}
-  
+            
  
         </div>
   

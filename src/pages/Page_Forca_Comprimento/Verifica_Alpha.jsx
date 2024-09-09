@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const VerificaAlpha = () => {
+const VerificaAlpha = ({ onResultado }) => {
     const [valorAlpha, setValorAlpha] = useState('');
     const [mensagem, setMensagem] = useState('');
     const [mensagemCor, setMensagemCor] = useState('');
@@ -16,12 +16,15 @@ const VerificaAlpha = () => {
         if (isNaN(valorAlphaNum)) {
             setMensagem('Por favor, insira valores numéricos válidos!');
             setMensagemCor('red');  // Define cor vermelha para mensagem de erro
+            onResultado(0);
         } else if (dentroMargemA) {
             setMensagem('Respostas corretas ou aproximadas: α = 1449.027');
             setMensagemCor('#00ec36');  // Define cor verde para resposta correta
+            onResultado(1);
         } else {
             setMensagem('Respostas incorretas. Tente novamente.');
             setMensagemCor('red');  // Define cor vermelha para resposta incorreta
+            onResultado(0);
         }
     };
 
@@ -76,7 +79,7 @@ const VerificaAlpha = () => {
               </div>
               <div style={{display: 'flex', marginTop: '10px', alignItems: 'center'}}>
                 <div>
-                  <button type="submit">Enviar</button>
+                  <button className='button_resp' type="submit">Enviar</button>
                 </div>
                 {mensagem && (
                   <p style={{ marginTop: '0px', marginBottom: '0px', marginLeft: '10px', color: mensagemCor }}>

@@ -3,7 +3,7 @@ import InfoIcon from '../../components/Info';
 
 import coeficiente_angular from '../../assets/img/coeficiente_angular.png'
 
-function Verifica_A() {
+function Verifica_A({ onResultado }) {
   const [valorA, setValorA] = useState('');
   const [mensagem, setMensagem] = useState('');
   const [mensagemCor, setMensagemCor] = useState('');
@@ -27,12 +27,15 @@ function Verifica_A() {
     if (isNaN(valorANum)) {
       setMensagem('Por favor, insira valores numéricos válidos!');
       setMensagemCor('red');  // Define cor vermelha para mensagem de erro
+      onResultado(0);
     } else if (dentroMargemA) {
       setMensagem('Resposta correta ou aproximada: a = 37.24');
       setMensagemCor('#00ec36');  // Define cor verde para resposta correta
+      onResultado(1);
     } else {
       setMensagem('Resposta incorreta. Tente novamente.');
       setMensagemCor('red');  // Define cor vermelha para resposta incorreta
+      onResultado(0);
     }
   };
 
@@ -67,7 +70,7 @@ function Verifica_A() {
           </div>
           <div style={{display: 'flex', marginTop: '10px', alignItems: 'center'}}>
             <div>
-              <button type="submit">Enviar</button>
+            <button className='button_resp' type="submit">Enviar</button>
             </div>
             {mensagem && (
               <p style={{ marginTop: '0px', marginBottom: '0px', marginLeft: '10px', color: mensagemCor }}>

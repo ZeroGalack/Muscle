@@ -1,39 +1,36 @@
 import React, { useState } from 'react';
 
-function Verifica_BP0() {
+function Verifica_BP0({ onResultado }) {
   const [valorB, setValorB] = useState('');
   const [valorP0, setValorP0] = useState('');
-
   const [mensagem, setMensagem] = useState('');
   const [mensagemCor, setMensagemCor] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Valores esperados para 'a'
     const valorEsperadoB = -0.335;
     const valorEsperadoP0 = 144.90;
-
-    // Margem de erro
     const margemErro = 0.5;
 
-    // Conversão de valores de string para número
     const valorBNum = parseFloat(valorB);
-    const valorP0Num = parseFloat(valorEsperadoP0);
+    const valorP0Num = parseFloat(valorP0);
 
-    // Verificação dos valores inseridos com margem de erro
     const dentroMargemA = Math.abs(valorBNum - valorEsperadoB) <= margemErro;
     const dentroMargemP0 = Math.abs(valorP0Num - valorEsperadoP0) <= margemErro;
 
     if (isNaN(valorBNum) || isNaN(valorP0Num)) {
       setMensagem('Por favor, insira valores numéricos válidos!');
-      setMensagemCor('red');  // Define cor vermelha para mensagem de erro
+      setMensagemCor('red');
+      onResultado(0); // Retorna 0 se houver erro
     } else if (dentroMargemA && dentroMargemP0) {
-      setMensagem('Resposta corretas ou aproximadas: 𝑏 = 0.335 e 𝑃0 = 144.90');
-      setMensagemCor('#00ec36');  // Define cor verde para resposta correta
+      setMensagem('Respostas corretas ou aproximadas: 𝑏 = -0.335 e 𝑃0 = 144.90');
+      setMensagemCor('#00ec36');
+      onResultado(1); // Retorna 1 se a resposta estiver correta
     } else {
       setMensagem('Resposta incorreta. Tente novamente.');
-      setMensagemCor('red');  // Define cor vermelha para resposta incorreta
+      setMensagemCor('red');
+      onResultado(0); // Retorna 0 para resposta incorreta
     }
   };
 
@@ -67,7 +64,7 @@ function Verifica_BP0() {
           </div>
           <div style={{display: 'flex', marginTop: '10px', alignItems: 'center'}}>
             <div>
-              <button type="submit">Enviar</button>
+            <button className='button_resp' type="submit">Enviar</button>
             </div>
             {mensagem && (
               <p style={{ marginTop: '0px', marginBottom: '0px', marginLeft: '10px', color: mensagemCor }}>

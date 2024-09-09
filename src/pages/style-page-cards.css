@@ -72,6 +72,30 @@
   }
 
   
+
+.button_resp {
+  background-color: #396d8c; /* Azul primário */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button_resp:hover {
+  background-color: #254558; /* Azul mais escuro no hover */
+  transform: translateY(-2px); /* Efeito de "elevação" */
+}
+
+.button_resp:active {
+  background-color: #152631; /* Azul ainda mais escuro no clique */
+  transform: translateY(0); /* Remover elevação no clique */
+}
+
+
 .button-demo {
     font-size: 50px;
     color: #64aad4;

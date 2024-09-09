@@ -17,6 +17,12 @@ const Page_Forca_Comprimento = () => {
 
     const [content, setContent] = useState(0);
 
+    const [resultado, setResultado] = useState(null);
+
+    const handleResultado = (resultado) => {
+      setResultado(resultado);
+    };
+
     const limDir = 4;
     const limEsq = 0;
 
@@ -141,7 +147,7 @@ const Page_Forca_Comprimento = () => {
           return (
             <div style={{marginTop: '0px'}}>
               <div className='card-demo' style={{ textAlign: 'justify'}} >
-                <Verifica_Alpha />
+                <Verifica_Alpha  onResultado={handleResultado} />
               </div>
             </div>
           );
@@ -171,16 +177,27 @@ const Page_Forca_Comprimento = () => {
 
    
           { content === limDir ? (
+
+          <div>
+            {resultado ? (
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <button onClick={goToAboutPage} className='button-demo'>
+                  <FontAwesomeIcon icon={faChevronRight} />
+                </button>
+              </div>
+            ) : 
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <button onClick={goToAboutPage} className='button-demo'>
-                <FontAwesomeIcon icon={faChevronRight} />
-              </button>
-            </div>
+                <button className='button-demo'>
+                  {/* <FontAwesomeIcon icon={faChevronRight} /> */}
+                </button>
+              </div>}
+          </div>
+
           ): (
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <button onClick={ButtonClickBD} className='button-demo'>
-                <FontAwesomeIcon icon={faChevronRight} />
-              </button>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <button onClick={ButtonClickBD} className='button-demo'>
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button>
           </div>
           )}
   
