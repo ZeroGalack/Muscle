@@ -255,7 +255,7 @@ h2 {
   color: #f1f1f1; /* Altere essa cor para a desejada */
 }
 .experimentos_card span {
-  color: #bd93f9;
+  color: #ff9912;
 }
 
 
@@ -394,7 +394,7 @@ h2 {
 .titulo {
   font-family: 'Times New Roman';
   text-align: start;
-  /* color: #5dfffb; */
+  color: #ff9100;
 }
 
 /* .destaque_comprimento {

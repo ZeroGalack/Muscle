@@ -88,14 +88,14 @@ const HillsModel = () => {
                           <p>
                           Ocorre quando o músculo <span>gera força</span> e <span>altera seu comprimento</span>. 
                           </p>
-                          <p><span style={{color: '#f12c2c'}}>Exemplo: </span>Levantar e abaixar um halter envolve contrações isotônicas.</p>
+                          <p><span >Exemplo: </span>Levantar e abaixar um halter envolve contrações isotônicas.</p>
                         </li>
                         <li>
                           <strong>Contração isométrica:</strong>
                           <p>
                           Ocorre quando o músculo <span>gera força sem alterar seu comprimento</span>, mantendo-se em uma posição fixa.
                           </p>
-                          <p><span style={{color: '#f12c2c'}}>Exemplo: </span>Empurrar contra uma parede ou segurar um peso na mesma posição sem movimento.</p>
+                          <p><span >Exemplo: </span>Empurrar contra uma parede ou segurar um peso na mesma posição sem movimento.</p>
                         </li>
          
                       </ul>
