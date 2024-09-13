@@ -11,7 +11,7 @@ function Verifica_BP0({ onResultado }) {
 
     const valorEsperadoB = -0.335;
     const valorEsperadoP0 = 144.90;
-    const margemErro = 0.5;
+    const margemErro = 2;
 
     const valorBNum = parseFloat(valorB);
     const valorP0Num = parseFloat(valorP0);
@@ -59,7 +59,7 @@ function Verifica_BP0({ onResultado }) {
               id="campoP0"
               value={valorP0}
               onChange={(e) => setValorP0(e.target.value)}
-              placeholder="Digite o valor de 𝑃0!"
+              placeholder="Digite o valor de 𝑃0"
             />
           </div>
           <div style={{display: 'flex', marginTop: '10px', alignItems: 'center'}}>

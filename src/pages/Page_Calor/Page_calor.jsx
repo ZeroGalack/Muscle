@@ -51,38 +51,41 @@ const Page_Calor = () => {
           return (
             <div style={{marginTop: '0px'}}>
               <div className='card-demo' style={{ textAlign: 'justify'}} >
-                <div style={{ display: 'grid', gridTemplateColumns: '40% 60%'}}>
+                <div style={{ display: 'grid', gridTemplateColumns: '50% 50%'}}>
                   <div style={{marginRight: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                    <h2>Relação comprimento-velocidade-calor</h2>
-                      <p style={{textIndent: '2em'}}>
-                        Hill estudou a relação entre calor, 
-                        velocidade e encurtamento muscular. 
+                  <h1 className='titulo'>Relação Comprimento-Velocidade-Calor:</h1>
+                      <p style={{textIndent: '2em'}}> 
+                        Hill estudou a relação entre calor, velocidade e encurtamento muscular. 
+                        Ele observou que, durante o encurtamento, além do calor liberado em uma contração isométrica, 
+                        ocorre um excesso de calor.
+                      </p>
+                      <p style={{textIndent: '2em'}}> 
                         Para verificar suas descobertas, 
                         realize os seguintes experimentos 
-                        para observar como o calor liberado 
-                        varia com a distância de encurtamento 
-                        e a velocidade de encurtamento. 
+                        para observar como o <span className='destaque_calor'>calor liberado </span> 
+                        varia com a <span className='destaque_comprimento'>distância de encurtamento </span>
+                        e a <span className='destaque_velocidade'> velocidade de encurtamento</span>. 
                       </p>
                     </div>
                     <div style={{marginLeft: '10px'}}>
-                    <div>
+                    <div className="experimentos_card" >
                       <ul>
                         <li>
                           <strong>Experimento 1:</strong>
                           <p>
-                            Encurte o músculo a uma distância fixa e meça a quantidade de calor liberada utilizando diferentes velocidades de encurtamento.
+                          Encurte o músculo a uma <span>distância fixa</span> e meça a força utilizando <span>diferentes velocidades</span>.
                           </p>
                         </li>
                         <li>
                           <strong>Experimento 2:</strong>
                           <p>
-                            Mantenha a velocidade de encurtamento fixa e meça a quantidade de calor liberada utilizando diferentes distâncias de encurtamento.
+                            Mantenha a <span>velocidade fixa</span> e meça a quantidade de calor liberada utilizando <span>diferentes distâncias</span> de encurtamento.
                           </p>
                         </li>
                         <li>
                           <strong>Experimento 3:</strong>
                           <p>
-                          Realize uma contração isométrica onde a distância de encurtamento (𝑥 = 0) e registre a quantidade de calor liberada.
+                          Realize uma contração <span>isométrica </span>onde a distância de encurtamento <span>(𝑥 = 0) </span>e registre a quantidade de calor liberada.
                           </p>
                         </li>
                       </ul>
@@ -95,10 +98,12 @@ const Page_Calor = () => {
 
         } else if (content === limEsq + 1) {
           return (
-            <div style={{marginTop: '0px'}}>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+              <h1 style={{ fontFamily: 'Times New Roman' }}>Lab. Comprimento - Velocidade - Calor</h1>
               <div className='card-demo' style={{ textAlign: 'justify'}} >
                 <Lab_calor />
               </div>
+              <h1>‎</h1>
             </div>
           );
 
@@ -109,14 +114,14 @@ const Page_Calor = () => {
               <div>
                 <Perguntas_alternativas
                   perguntaTexto={
-                    'Como a quantidade total de calor liberado varia quando se usa diferentes velocidades de encurtamento, mantendo a distância de encurtamento constante?'
+                    'Como o excesso de calor varia quando se usa diferentes velocidades de encurtamento, mantendo a distância de encurtamento constante?'
                   }
                   alternativas={
                     [
                       'a) O calor liberado aumenta com a velocidade de encurtamento.',
                       'b) O calor liberado diminui com a velocidade de encurtamento.',
                       'c) O calor liberado permanece constante independentemente da velocidade de encurtamento.',
-                      'd) O calor liberado é zero para todas as velocidades de encurtamento.'
+                      'd) O calor liberado é zero para todas as velocidades de encurtamento'
                     ]
                   }
                   respostaCorreta={
@@ -135,7 +140,7 @@ const Page_Calor = () => {
               <div>
                 <Perguntas_alternativas
                   perguntaTexto={
-                    'Qual é o efeito da distância de encurtamento (𝑥) sobre a quantidade de calor liberado, mantendo a velocidade de encurtamento constante?'
+                    'Qual é o efeito da distância de encurtamento (𝑥) sobre o excesso de calor, mantendo a velocidade de encurtamento constante?'
                   }
                   alternativas={
                     [

@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import './Perguntas_alternativas.css';
+
+
 
 const Perguntas_alternativas = ({ perguntaTexto, alternativas, respostaCorreta }) => {
   const [respostaSelecionada, setRespostaSelecionada] = useState(null);
@@ -13,68 +16,44 @@ const Perguntas_alternativas = ({ perguntaTexto, alternativas, respostaCorreta }
     }
   };
 
-  const styles = {
-    container: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      padding: '20px',
-    },
-    cardsContainer: {
-      display: 'flex',
-      flexDirection: 'column',
-      width: '100%',
-      maxWidth: '600px',
-    },
-    card: (isSelected, isCorrect) => ({
-      backgroundColor: isSelected
-        ? isCorrect
-          ? '#28a745' // Verde para resposta correta
-          : '#dc3545' // Vermelho para resposta errada
-        : '#282a36',
-      color: '#ffffff',
-      padding: '15px',
-      margin: '10px 0',
-      border: `1px solid ${isSelected ? '#44475a' : '#3c3c3c'}`,
-      borderRadius: '8px',
-      cursor: 'pointer',
-      transition: 'background-color 0.3s, transform 0.3s',
-      transform: isSelected ? 'scale(1.02)' : 'none',
-      ':hover': {
-        backgroundColor: '#3c3c3c',
-        transform: 'scale(1.02)',
-      },
-    }),
-    mensagem: {
-      marginTop: '5px',
-      fontSize: '1rem', // Ajuste baseado no tamanho da tela
-      color: respostaSelecionada === respostaCorreta ? '#28a745' : '#dc3545',
-    },
-    pergunta: {
-      fontSize: '1.2rem',
-      textAlign: 'center',
-      marginBottom: '20px',
-    },
+  const separarMarcador = (texto) => {
+    const marcador = texto.substring(0, 2); // Pega os dois primeiros caracteres, ex: "a)"
+    const conteudo = texto.substring(2); // O resto do texto
+    return { marcador, conteudo };
   };
 
-  return (
-    <div style={styles.container}>
+  const isSelected = (opcao) => respostaSelecionada === opcao;
+  const isCorrect = (opcao) => opcao === respostaCorreta;
 
-      <div style={{display: 'flex', width: '100%', maxWidth: '600px'}}>
-        <p style={styles.pergunta}>{perguntaTexto}</p>
+  return (
+    <div className="container">
+      <div style={{ display: 'flex', width: '100%', maxWidth: '600px' }}>
+        <p className="pergunta">{perguntaTexto}</p>
       </div>
-      <div style={styles.cardsContainer}>
-        {alternativas.map((opcao, index) => (
-          <div
-            key={index}
-            style={styles.card(respostaSelecionada === opcao, opcao === respostaCorreta)}
-            onClick={() => handleClick(opcao)}
-          >
-            <p>{opcao}</p>
-          </div>
-        ))}
+      <div className="cardsContainer">
+        {alternativas.map((opcao, index) => {
+          const { marcador, conteudo } = separarMarcador(opcao);
+          const selected = isSelected(opcao);
+          const correct = isCorrect(opcao);
+          const cardClass = `card ${selected ? (correct ? 'correct' : 'incorrect') : ''} ${selected ? 'selected' : ''}`;
+          
+          return (
+            <div
+              key={index}
+              className={cardClass}
+              onClick={() => handleClick(opcao)}
+            >
+              <span className="marcador">{marcador}</span>
+              <span>{conteudo}</span>
+            </div>
+          );
+        })}
       </div>
-      {/* {respostaSelecionada && <div style={styles.mensagem}>{mensagem}</div>} */}
+      {/* {mensagem && (
+        <p className={`mensagem ${isSelected(respostaCorreta) ? 'correct' : 'incorrect'}`}>
+          {mensagem}
+        </p>
+      )} */}
     </div>
   );
 };

@@ -39,7 +39,7 @@ const Home = () => {
           <div style={{display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center'}}>
         
               <div style={{display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'center', margin:'0px'}}>
-                <h1 style={{fontSize: '350%'}}>ⓂⓊⓈⒸⓁⒺ</h1>
+                <h1 style={{fontSize: '350%', color: 'fff'}}>ⓂⓊⓈⒸⓁⒺ</h1>
               </div>
 
               <div style={{display: 'flex', justifyContent: 'center', marginRight: '5px', marginLeft: '5p'}}>

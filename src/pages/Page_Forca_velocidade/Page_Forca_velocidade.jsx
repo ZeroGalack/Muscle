@@ -57,7 +57,7 @@ const Page_Forca_velocidade = () => {
               <div style={{ display: 'grid', gridTemplateColumns: '50% 50%'}}>
                 <div style={{marginRight: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                     
-                  <h2>Relação Força - velocidade</h2>
+                <h1 className='titulo'>Relação Força - velocidade:</h1>
 
                   <p style={{textIndent: '2em'}}>
                     Nas atividades anteriores, você deve ter 
@@ -72,18 +72,18 @@ const Page_Forca_velocidade = () => {
 
               <div style={{marginLeft: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
 
-                  <div>
+                  <div className="experimentos_card" >
                     <ul>
                       <li>
                         <strong>Experimento 1:</strong>
                         <p>
-                          Encurte o músculo a uma distância fixa e meça a força utilizando diferentes velocidades de encurtamento.
+                          Encurte o músculo a uma <span>distância fixa</span> e meça a força utilizando <span>diferentes velocidades de encurtamento</span>.
                         </p>
                       </li>
                       <li>
                         <strong>Experimento 2:</strong>
                         <p>
-                        Realize uma contração isométrica onde a distância de encurtamento (𝑥 = 0) e registre a força.
+                        Realize uma contração <span>isométrica </span>onde a distância de encurtamento <span>(𝑥 = 0) </span>e registre a força.
                         </p>
                       </li>
                       </ul>
@@ -98,10 +98,12 @@ const Page_Forca_velocidade = () => {
 
       } else if (content === limEsq + 1) {
         return (
-          <div style={{marginTop: '0px'}}>
+          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <h1 style={{ fontFamily: 'Times New Roman' }}>Lab. Força - velocidade</h1>
             <div className='card-demo' style={{ textAlign: 'justify'}} >
               <Lab_Forca_velocidade />
             </div>
+            <h1>‎</h1>
           </div>
         );
 
@@ -181,10 +183,11 @@ const Page_Forca_velocidade = () => {
               <div style={{ display: 'grid', gridTemplateColumns: '50% 50%'}}>
                 <div style={{marginRight: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                     
-                  <h2>Parabéns!</h2>
+                  {/* <h2>Parabéns!</h2> */}
 
                   <p style={{textIndent: '2em'}}>
-                  Você identificou corretamente que o gráfico da relação entre 
+                  <span style={{fontWeight: 'bold'}}> Parabéns, </span>
+                  você identificou corretamente que o gráfico da relação entre 
                   a força 𝑃 e a velocidade 𝑣 tem a forma da classica
                   relação hiperbólica de Hill.
                   </p>

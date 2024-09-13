@@ -16,7 +16,7 @@ function Verifica_A({ onResultado }) {
     const valorEsperadoA = 37.24;
 
     // Margem de erro
-    const margemErro = 0.5;
+    const margemErro = 0.8;
 
     // Conversão de valores de string para número
     const valorANum = parseFloat(valorA);
@@ -55,7 +55,7 @@ function Verifica_A({ onResultado }) {
               id="campoA"
               value={valorA}
               onChange={(e) => setValorA(e.target.value)}
-              placeholder="Digite o valor de a!"
+              placeholder="Digite o valor de a"
             />
 
           <InfoIcon style={{right: '22%', top: '33%'}}>

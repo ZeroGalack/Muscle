@@ -51,10 +51,10 @@ const Page_Taxa_Energia = () => {
             <div style={{marginTop: '0px'}}>
 
               <div className='card-demo' style={{ textAlign: 'justify'}} >
-                <div style={{ display: 'grid', gridTemplateColumns: '60% 40%'}}>
+                <div style={{ display: 'grid', gridTemplateColumns: '55% 45%'}}>
                   <div style={{marginRight: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                       
-                    <h2>Relação Taxa de Energia Extra - Força</h2>
+                  <h1 className='titulo'>Relação Taxa de Energia Extra - Força:</h1>
 
                     <p style={{textIndent: '2em'}}>
                       A energia adicional liberada além da 
@@ -92,18 +92,18 @@ const Page_Taxa_Energia = () => {
                   
                 <div style={{marginLeft: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
 
-                    <div>
+                   <div className="experimentos_card" >
                       <ul>
                         <li>
                           <strong>Experimento 1:</strong>
                           <p>
-                            Encurte o músculo a uma distância fixa e meça a Taxa de Energia Extra utilizando diferentes velocidades de encurtamento.
+                            Encurte o músculo a uma <span>distância fixa</span> e meça a Taxa de Energia Extra utilizando <span>diferentes velocidades</span>.
                           </p>
                         </li>
                         <li>
                           <strong>Experimento 2:</strong>
                           <p>
-                          Realize uma contração isométrica onde a distância de encurtamento (𝑥 = 0) e registre a Taxa de Energia Extra.
+                          Realize uma contração <span>isométrica </span>onde a distância de encurtamento <span>(𝑥 = 0) </span>e registre a Taxa de Energia Extra.
                           </p>
                         </li>
                         </ul>
@@ -117,10 +117,12 @@ const Page_Taxa_Energia = () => {
 
         } else if (content === limEsq + 1) {
           return (
-            <div style={{marginTop: '0px'}}>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+              <h1 style={{ fontFamily: 'Times New Roman' }}>Lab. Taxa de Energia Extra - Força</h1>
               <div className='card-demo' style={{ textAlign: 'justify'}} >
                 <Lab_Taxa_Energia />
               </div>
+              <h1>‎</h1>
             </div>
           );
 

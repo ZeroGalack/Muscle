@@ -55,11 +55,11 @@ const Page_Forca_Comprimento = () => {
 
                     <div style={{ marginRight: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
 
-                      <h2>Relação Força-Comprimento</h2>
-
+                    <h1 className='titulo'>Relação Força-Comprimento:</h1>
+                    
                       <p style={{ textIndent: '2em'}}>
-                        O elemento elástico é modelado como uma estrutura similar a uma mola, cujo comprimento é representado por 𝐿𝑠𝑒.
-                        Já o comprimento do elemento contrátil é denotado por 𝐿𝑐𝑒, enquanto 𝐿 refere-se ao comprimento total do músculo.
+                        O <span className='destaque_comprimento'>elemento elástico</span> é modelado como uma estrutura similar a uma <span className='destaque_comprimento'>mola</span>, cujo comprimento é representado por <span className='destaque_comprimento'>𝐿𝑠𝑒</span>.
+                        Já o comprimento do <span className='destaque_comprimento'>elemento contrátil</span> é denotado por <span className='destaque_comprimento'>𝐿𝑐𝑒</span>, enquanto <span className='destaque_comprimento'>𝐿</span> refere-se ao <span className='destaque_comprimento'>comprimento total do músculo</span>.
                       </p>
 
              
@@ -67,18 +67,20 @@ const Page_Forca_Comprimento = () => {
 
                       <div style={{marginLeft: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
 
-                      <div>
+                      <div className="experimentos_card" >
                         <ul>
                           <li>
                             <strong>Experimento 1:</strong>
                             <p>
-                              Realize uma contração isométrica onde a distância de encurtamento (𝑥=0) e observe o comportamento dos elementos 𝐿𝑐𝑒 e 𝐿𝑠𝑒.
+                              Realize uma contração <span>isométrica </span>
+                              onde a distância de encurtamento <span> (𝑥=0) </span>
+                               e observe o comportamento dos elementos<span> 𝐿𝑐𝑒 e 𝐿𝑠𝑒</span>.
                             </p>
                           </li>
                           <li>
                             <strong>Experimento 2:</strong>
                             <p>
-                            Experimente o modelo variando a velocidade de contração e os diferentes encurtamentos e observe o comportamento dos elementos 𝐿𝑐𝑒 e 𝐿𝑠𝑒, bem como a geração de força 𝑃
+                            Experimente o modelo variando a velocidade de contração e os diferentes encurtamentos e observe o comportamento dos elementos<span> 𝐿𝑐𝑒 e 𝐿𝑠𝑒</span>, bem como a geração de força<span> 𝑃</span>.
                             </p>
                           </li>
                           </ul>
@@ -91,10 +93,12 @@ const Page_Forca_Comprimento = () => {
 
         } else if (content === limEsq + 1) {
           return (
-            <div style={{marginTop: '0px'}}>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+              <h1 style={{ fontFamily: 'Times New Roman' }}>Lab. Força - Comprimento</h1>
               <div className='card-demo' style={{ textAlign: 'justify'}} >
                 <Lab_forca_comprimento />
               </div>
+              <h1>‎</h1>
             </div>
           );
 
@@ -104,16 +108,14 @@ const Page_Forca_Comprimento = () => {
               <div className='card-demo' style={{ textAlign: 'justify'}} >
               <div>
                 <Perguntas_alternativas
-                  perguntaTexto={'Em uma contração Isométrica (?), como se comportam os elementos 𝐿, 𝐿𝑐𝑒 e 𝐿𝑠𝑒?'}
-                  alternativas={
-                    [
-                    'a) O comprimento do elemento contrátil e do elemento elástico em série permanecem constantes. A equação correspondente é 𝐿 = 𝐿𝑐𝑒 × 𝐿𝑠𝑒.',
-                    'b) O comprimento do elemento contrátil diminui, enquanto o comprimento do elemento elástico em série aumenta, compensando-se mutuamente. A equação correta é 𝐿 = 𝐿𝑐𝑒 + 𝐿𝑠𝑒.',
-                    'c) O comprimento do elemento contrátil aumenta, enquanto o comprimento do elemento elástico em série diminui. A equação correspondente é 𝐿 = 𝐿𝑐𝑒 − 𝐿𝑠𝑒.',
-                    'd) O comprimento do elemento contrátil e o comprimento do elemento elástico em série aumentam simultaneamente. A equação correspondente é 𝐿 = 𝐿𝑐𝑒/𝐿𝑠𝑒.'
-                    ]
-                  }
-                  respostaCorreta={'b) O comprimento do elemento contrátil diminui, enquanto o comprimento do elemento elástico em série aumenta, compensando-se mutuamente. A equação correta é 𝐿 = 𝐿𝑐𝑒 + 𝐿𝑠𝑒.'}
+                  perguntaTexto={'Em uma contração Isométrica, como se comportam os elementos 𝐿, 𝐿𝑐𝑒 e 𝐿𝑠𝑒?'}
+                  alternativas={[
+                    'a) O comprimento do elemento contrátil e do elemento elástico em série permanecem constantes. A equação correspondente é 𝐿 = 𝐿𝑐𝑒 × 𝐿𝑠𝑒',
+                    'b) O comprimento do elemento contrátil diminui, enquanto o comprimento do elemento elástico em série aumenta, compensando-se mutuamente. A equação correta é 𝐿 = 𝐿𝑐𝑒 + 𝐿𝑠𝑒',
+                    'c) O comprimento do elemento contrátil aumenta, enquanto o comprimento do elemento elástico em série diminui. A equação correspondente é 𝐿 = 𝐿𝑐𝑒 − 𝐿𝑠𝑒',
+                    'd) O comprimento do elemento contrátil e o comprimento do elemento elástico em série aumentam simultaneamente. A equação correspondente é 𝐿 = 𝐿𝑐𝑒/𝐿𝑠'
+                  ]}
+                  respostaCorreta={'b) O comprimento do elemento contrátil diminui, enquanto o comprimento do elemento elástico em série aumenta, compensando-se mutuamente. A equação correta é 𝐿 = 𝐿𝑐𝑒 + 𝐿𝑠𝑒'}
                 />
               </div>
               </div>
@@ -126,16 +128,16 @@ const Page_Forca_Comprimento = () => {
               <div className='card-demo' style={{ textAlign: 'justify'}} >
               <div>
                 <Perguntas_alternativas
-                  perguntaTexto={'Em uma contração isotônica (?), o que ocorre com a força gerada pelo músculo quando o comprimento do músculo é reduzido?'}
+                  perguntaTexto={'Em uma contração isotônica, o que ocorre com a força gerada pelo músculo quando o comprimento do músculo é reduzido?'}
                   alternativas={
                     [
                       'a) A força inicialmente aumenta à medida que o elemento contrátil atinge sua velocidade máxima e depois diminui rapidamente à medida que o elemento elástico se alonga.',
                       'b) A força permanece constante durante todo o processo de encurtamento do elemento contrátil e não é afetada pelo comportamento do elemento elástico.',
                       'c) A força diminui gradualmente e continua a diminuir à medida que o elemento contrátil se encurta, sem recuperação.',
-                      'd) A força inicialmente diminui devido ao encurtamento rápido do elemento contrátil, mas então se recupera quando o elemento contrátil começa a reesticar o elemento elástico.'
+                      'd) A força inicialmente diminui devido ao encurtamento rápido do elemento contrátil, mas então se recupera quando o elemento contrátil começa a reesticar o elemento elástico'
                     ]
                   }
-                  respostaCorreta={'d) A força inicialmente diminui devido ao encurtamento rápido do elemento contrátil, mas então se recupera quando o elemento contrátil começa a reesticar o elemento elástico.'}
+                  respostaCorreta={'d) A força inicialmente diminui devido ao encurtamento rápido do elemento contrátil, mas então se recupera quando o elemento contrátil começa a reesticar o elemento elástico'}
                 />
               </div>
               </div>

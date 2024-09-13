@@ -11,7 +11,7 @@ function Verifica_K({ onResultado }) {
     const valorEsperadoK = 61.017879999609;
 
     // Margem de erro
-    const margemErro = 0.5;
+    const margemErro = 2;
 
     // Conversão de valores de string para número
     const valorKNum = parseFloat(valorK);
@@ -49,7 +49,7 @@ function Verifica_K({ onResultado }) {
               id="campoK"
               value={valorK}
               onChange={(e) => setValorK(e.target.value)}
-              placeholder="Digite o valor de 𝑘!"
+              placeholder="Digite o valor de 𝑘"
             />
           </div>
           <div style={{display: 'flex', marginTop: '10px', alignItems: 'center'}}>

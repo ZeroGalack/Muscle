@@ -7,6 +7,8 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import img_hill_model from '../../assets/img/img-hill-model.png'
+import Iso_toni from '../../assets/img/Iso_toni.png'
+
 
 
 const HillsModel = () => {
@@ -14,8 +16,8 @@ const HillsModel = () => {
 
     const [content, setContent] = useState(0);
 
-    const limDir = 0;
     const limEsq = 0;
+    const limDir = 1;
 
     const ButtonClickBE = () => {
         setContent((prevContent) => {
@@ -37,7 +39,7 @@ const HillsModel = () => {
 
 
     const renderContent = () => {
-      if (content === limDir) {
+      if (content === limEsq) {
         return (
           <div style={{marginTop: '0px'}}>
             <div className='card-demo' style={{ textAlign: 'justify' }} >
@@ -45,7 +47,8 @@ const HillsModel = () => {
 
                 <div style={{display: 'flex', justifyContent: 'center', marginRight: '10px', flexDirection: 'column'}}>
                   
-                  <h1>The Hill's Model</h1>
+                  <h1 className='titulo'  >The Hill's Model:</h1>
+
                     <p style={{textIndent: '2em'}}>
                       O modelo de Hill de dois elementos é uma representação
                       biomecânica simplificada do comportamento muscular, que
@@ -68,6 +71,53 @@ const HillsModel = () => {
         ); 
       
       }  
+
+      if (content === limDir) {
+        return (
+          <div style={{marginTop: '0px'}}>
+            <div className='card-demo' style={{ textAlign: 'justify' }} >
+              <div style={{ display: 'grid', gridTemplateColumns: '55% 45%' }}>
+
+                <div style={{display: 'flex', justifyContent: 'center', marginRight: '10px', flexDirection: 'column'}}>
+                                  
+                  <div className="experimentos_card" >
+                    <h1 className='titulo' style={{paddingLeft: '5%'}} >Alguns termos:</h1>
+                      <ul>
+                        <li>
+                          <strong>Contração isotônica:</strong>
+                          <p>
+                          Ocorre quando o músculo <span>gera força</span> e <span>altera seu comprimento</span>. 
+                          </p>
+                          <p><span style={{color: '#f12c2c'}}>Exemplo: </span>Levantar e abaixar um halter envolve contrações isotônicas.</p>
+                        </li>
+                        <li>
+                          <strong>Contração isométrica:</strong>
+                          <p>
+                          Ocorre quando o músculo <span>gera força sem alterar seu comprimento</span>, mantendo-se em uma posição fixa.
+                          </p>
+                          <p><span style={{color: '#f12c2c'}}>Exemplo: </span>Empurrar contra uma parede ou segurar um peso na mesma posição sem movimento.</p>
+                        </li>
+         
+                      </ul>
+                    </div>
+
+                    
+                </div>
+
+                <div style={{display: 'flex', alignItems: 'center', marginLeft: '10px'}}>
+         
+                <div className="img-fundoBranco" style={{ backgroundColor: '#bbb4d6', width: '100%', height: '80%', alignItems: 'center'}}>
+                    <img src={Iso_toni} alt="Iso_toni" style={{ height:'100%', maxWidth: '100%', maxHeight: '100%' }} />
+                </div>
+        
+                </div>
+      
+                </div>
+              </div>
+            </div>
+        ); 
+      
+      } 
     };
   
     return (
@@ -121,6 +171,7 @@ const HillsModel = () => {
     return (
       <div className="page-indicator">
         <div className={`indicator ${currentPage === 0 ? 'active' : ''}`}></div>
+        <div className={`indicator ${currentPage === 1 ? 'active' : ''}`}></div>
       </div>
     );
   };

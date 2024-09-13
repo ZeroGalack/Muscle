@@ -8,7 +8,7 @@ const VerificaAlpha = ({ onResultado }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const valorEsperadoB = 1449.027;
-        const margemErro = 0.5;
+        const margemErro = 2;
         const valorAlphaNum = parseFloat(valorAlpha);
 
         const dentroMargemA = Math.abs(valorAlphaNum - valorEsperadoB) <= margemErro;
@@ -32,19 +32,19 @@ const VerificaAlpha = ({ onResultado }) => {
       <div style={{ display: 'grid', gridTemplateColumns: '50% 50%' }}>
         <div style={{ marginRight: '10px' }}>
           <p>
-            Ótimo trabalho! A equação que representa o comprimento total do músculo é:
+            <span style={{fontWeight: 'bold'}} className='destaque_comprimento2'>Ótimo trabalho!</span> A equação que representa o comprimento total do músculo é:
           </p>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div className="img-fundoBranco" style={{ backgroundColor: '#052836', width: '80%' }}>
               <div>
-                <p>𝐿 = 𝐿𝑐𝑒 + 𝐿𝑠𝑒</p>
+                <p className=''>𝐿 = 𝐿𝑐𝑒 + 𝐿𝑠𝑒</p>
               </div>
             </div>
           </div>
           <p style={{ textIndent: '2em' }}>
-            A força de contração gerada pelo elemento contrátil (𝐿𝑐𝑒) é exatamente igual à força de alongamento do
-            elemento elástico em série (𝐿𝑠𝑒), pois ambos estão conectados em série. Essa força, 𝑃, é considerada
-            proporcional ao alongamento de 𝐿𝑠𝑒, de acordo com a Lei de Hooke, conforme descrito na equação a seguir:
+            A força de contração gerada pelo elemento contrátil <span className='destaque_comprimento'>(𝐿𝑐𝑒) </span> é exatamente igual à força de alongamento do
+            elemento elástico em série <span className='destaque_comprimento'>(𝐿𝑠𝑒)</span>, pois ambos estão conectados em série. Essa força, <span className='destaque_comprimento'> 𝑃</span>, é considerada
+            proporcional ao alongamento de <span className='destaque_comprimento'> 𝐿𝑠𝑒</span>, de acordo com a Lei de Hooke, conforme descrito na equação a seguir:
           </p>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div className="img-fundoBranco" style={{ backgroundColor: '#052836', width: '80%' }}>
@@ -57,13 +57,13 @@ const VerificaAlpha = ({ onResultado }) => {
 
         <div style={{ marginLeft: '10px' }}>
           <p>
-            Onde, α é o constante da mola e 𝐿𝑠𝑒(0) é o comprimento do elemento elástico da série antes da contração.
+            Onde,<span className='destaque_comprimento'> α </span>é o constante da mola e <span className='destaque_comprimento'>𝐿𝑠𝑒(0)</span> é o comprimento do elemento elástico da série antes da contração.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <h2>Responda: </h2>
+            <h2 className='destaque_comprimento2'>Responda: </h2>
             <p style={{ textIndent: '2em' }}>
-              Utilizando a fórmula da força 𝑃, retorne ao laboratório e, com os dados numéricos fornecidos, determine o valor de 𝛼,
+              Utilizando a fórmula da força <span className='destaque_comprimento'>𝑃</span>, retorne ao laboratório e, com os dados numéricos fornecidos, determine o valor de <span className='destaque_comprimento'>𝛼</span>,
               a constante elástica do elemento em série.
             </p>
             <form onSubmit={handleSubmit}>
@@ -74,7 +74,7 @@ const VerificaAlpha = ({ onResultado }) => {
                   id="campoA"
                   value={valorAlpha}
                   onChange={(e) => setValorAlpha(e.target.value)}
-                  placeholder="Digite o valor de α !"
+                  placeholder="Digite o valor de α"
                 />
               </div>
               <div style={{display: 'flex', marginTop: '10px', alignItems: 'center'}}>

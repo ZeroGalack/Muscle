@@ -1,0 +1,68 @@
+/* PerguntasAlternativas.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+}
+
+.card {
+  background-color: #282a36;
+  color: #ffffff;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #3c3c3c;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.card.selected {
+  transform: scale(1.02);
+}
+
+.card.correct {
+  background-color: #28a745;
+}
+
+.card.incorrect {
+  background-color: #dc3545;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.marcador {
+  color: #ff79f2;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.mensagem {
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+.mensagem.correct {
+  color: #28a745;
+}
+
+.mensagem.incorrect {
+  color: #dc3545;
+}
+
+.pergunta {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Times New Roman';
+  font-weight: bold;
+}
