@@ -81,7 +81,7 @@ const Page_Taxa_Energia = () => {
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <div className="img-fundoBranco" style={{ backgroundColor: '#052836', width: '80%', display: 'flex', justifyContent: 'center'}}>
                             <div>
-                              <p> 𝑑ℎ/𝑑𝑡 = (𝑃 + 𝑎)𝑣</p>
+                              <p> dE/𝑑𝑡 = (𝑃 + 𝑎)𝑣</p>
                             </div>
                         </div>
                       </div>
@@ -220,7 +220,7 @@ const Page_Taxa_Energia = () => {
                       <div className="img-fundoBranco" style={{ backgroundColor: '#052836', width: '80%', display: 'flex', justifyContent: 'center'}}>
                           <div>
                            <p>
-                            𝑑ℎ/𝑑𝑡 = (𝑃 + 𝑎)𝑣 = -𝑏𝑃 + 𝑐
+                            dE/𝑑𝑡 = (𝑃 + 𝑎)𝑣 = -𝑏𝑃 + 𝑐
                            </p>
                           </div>
                       </div>
@@ -245,7 +245,7 @@ const Page_Taxa_Energia = () => {
                       <div className="img-fundoBranco" style={{ backgroundColor: '#052836', width: '80%', display: 'flex', justifyContent: 'center'}}>
                           <div>
                            <p>
-                            𝑑ℎ/𝑑𝑡 = (𝑃 + 𝑎)𝑣 = 𝑏(𝑃 - 𝑃0)
+                            dE/𝑑𝑡 = (𝑃 + 𝑎)𝑣 = 𝑏(𝑃 - 𝑃0)
                            </p>
                           </div>
                       </div>

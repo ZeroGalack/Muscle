@@ -31,11 +31,15 @@ class Hill_Model:
         for j in range(len(t) - 1):
             Lse[j] = self.Lse0 + P[j] / self.alpha
             Lce[j] = L[j] - Lse[j]
+            
             dt = t[j + 1] - t[j]
             dL = L[j + 1] - L[j]
+            
             v = self.b * (self.PO - P[j]) / (self.a + P[j])
+            
             dP = self.alpha * (dL / dt + v) * dt
             P[j + 1] = P[j] + dP
+            
             dH = (self.a * v + self.k) * dt
             H[j + 1] = H[j] + dH
 
