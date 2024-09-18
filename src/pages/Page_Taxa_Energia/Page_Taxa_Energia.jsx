@@ -71,7 +71,7 @@ const Page_Taxa_Energia = () => {
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <div className="img-fundoBranco" style={{ backgroundColor: '#052836', width: '80%', display: 'flex', justifyContent: 'center'}}>
                           <div>
-                            <p> ℎ = 𝑃𝑥 + 𝑎𝑥 = (𝑃 + 𝑎)𝑥 </p>
+                            <p> E = 𝑃𝑥 + 𝑎𝑥 = (𝑃 + 𝑎)𝑥 </p>
                           </div>
                       </div>
                     </div>
